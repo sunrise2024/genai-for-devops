@@ -1,0 +1,5 @@
+{
+    "metricAlarmName": "ListCategoriesErrors",
+    "namespace": "AWS/Lambda",
+    "metric": "Errors"
+}
