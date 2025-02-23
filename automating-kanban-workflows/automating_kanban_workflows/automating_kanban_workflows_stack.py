@@ -151,7 +151,7 @@ class AutomatingKanbanWorkflowsStack(Stack):
         topic.add_to_resource_policy(topic_policy)
         
         # Create trigger Lambda and add necessary permissions
-        trigger_jira_kanban_function = create_lambda_function(self, "TriggerKanbanAutomationWorkflow", "trigger_kanban_automation_Workflow", {"STEP_FUNCTIONS_ARN": step_function.state_machine_arn})
+        trigger_jira_kanban_function = create_lambda_function(self, "TriggerKanbanAutomationWorkflow", "trigger_kanban_automation_workflow", {"STEP_FUNCTIONS_ARN": step_function.state_machine_arn})
         topic.add_subscription(subs.LambdaSubscription(trigger_jira_kanban_function))
         step_function.grant_start_execution(trigger_jira_kanban_function)
 
